@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CMSProvider } from './context/CMSContext';
 
@@ -33,7 +33,7 @@ export const App = () => {
   return (
     <AuthProvider>
       <CMSProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -46,7 +46,7 @@ export const App = () => {
               <Route path="*" element={<HomePage />} />
             </Routes>
           </Layout>
-        </BrowserRouter>
+        </HashRouter>
       </CMSProvider>
     </AuthProvider>
   );
