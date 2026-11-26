@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-porcelain: #FAF8F4;
+  --color-travertine: #EAE3D8;
+  --color-ink: #292520;
+  --color-terracotta: #AD6C4F;
+  --color-sage: #7D8879;
+  --color-walnut: #76533F;
+  --color-white: #FFFFFF;
+  --color-muted: #77716B;
+  --color-border: #DED8CF;
+  --color-dark-stage: #201D1A;
+}
+
+body {
+  background-color: var(--color-porcelain);
+  color: var(--color-ink);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #DED8CF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #AD6C4F;
+}
+
+/* Glassmorphism Subtle */
+.glass-surface {
+  background: rgba(250, 248, 244, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-dark {
+  background: rgba(32, 29, 26, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Architectural Card Borders */
+.border-aura {
+  border-color: #DED8CF;
+}
+
+/* Range input styling for 360 viewer */
+input[type=range].scrub-slider {
+  accent-color: #AD6C4F;
+}
+
+/* Hotspot pulse animation */
+@keyframes auraPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(173, 108, 79, 0.6);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 14px rgba(173, 108, 79, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(173, 108, 79, 0);
+  }
+}
+
+.hotspot-beacon {
+  animation: auraPulse 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
